@@ -32,11 +32,6 @@ CONTEXT_LENGTH = 512
 # Granite-TTM-R2 supports forecast length upto 720 and Granite-TTM-R1 supports forecast length upto 96
 PREDICTION_LENGTH = 96
 
-TARGET_DATASET = "etth1"
-dataset_path = (
-    "https://raw.githubusercontent.com/zhouhaoyi/ETDataset/main/ETT-small/ETTh1.csv"
-)
-
 # Results dir
 OUT_DIR = "ttm_finetuned_models/"
 
