@@ -1,0 +1,186 @@
+Loading model...
+Loading datasets...
+
+Running ETTh1 with context=672, prediction=96, stride=96
+[ETTh1] pred=96 windows=210 series=7 overall_mse=9.844768 overall_mae=1.442388
+  - HUFL: mse=31.720968, mae=3.447493
+  - HULL: mse=0.913869, mae=0.692606
+  - MUFL: mse=30.985308, mae=3.257005
+  - MULL: mse=0.646970, mae=0.565553
+  - LUFL: mse=0.495114, mae=0.465029
+  - LULL: mse=0.042836, mae=0.159383
+  - OT: mse=4.108305, mae=1.509647
+
+Running ETTh1 with context=672, prediction=192, stride=192
+[ETTh1] pred=192 windows=105 series=7 overall_mse=9.958714 overall_mae=1.510409
+  - HUFL: mse=32.126953, mae=3.543958
+  - HULL: mse=1.068449, mae=0.758023
+  - MUFL: mse=30.321278, mae=3.331337
+  - MULL: mse=0.745377, mae=0.615239
+  - LUFL: mse=0.517306, mae=0.491319
+  - LULL: mse=0.044581, mae=0.164629
+  - OT: mse=4.887057, mae=1.668357
+
+Running ETTh1 with context=672, prediction=336, stride=336
+[ETTh1] pred=336 windows=56 series=7 overall_mse=12.726084 overall_mae=1.685390
+  - HUFL: mse=41.169895, mae=3.990293
+  - HULL: mse=1.284281, mae=0.807029
+  - MUFL: mse=38.947868, mae=3.765708
+  - MULL: mse=0.850483, mae=0.640840
+  - LUFL: mse=0.566421, mae=0.508892
+  - LULL: mse=0.049481, mae=0.174488
+  - OT: mse=6.214162, mae=1.910481
+
+Running ETTh1 with context=672, prediction=720, stride=720
+[ETTh1] pred=720 windows=28 series=7 overall_mse=10.544949 overall_mae=1.652062
+  - HUFL: mse=33.661995, mae=3.817780
+  - HULL: mse=1.446854, mae=0.879020
+  - MUFL: mse=30.048668, mae=3.503016
+  - MULL: mse=0.893278, mae=0.678495
+  - LUFL: mse=0.575545, mae=0.529460
+  - LULL: mse=0.063881, mae=0.204887
+  - OT: mse=7.124425, mae=1.951777
+
+Running ETTh2 with context=672, prediction=96, stride=96
+[ETTh2] pred=96 windows=210 series=7 overall_mse=16.354364 overall_mae=2.410207
+  - HUFL: mse=39.130100, mae=4.443445
+  - HULL: mse=5.696071, mae=1.153828
+  - MUFL: mse=35.780533, mae=4.022322
+  - MULL: mse=8.305689, mae=1.902556
+  - LUFL: mse=7.313643, mae=1.570727
+  - LULL: mse=1.004561, mae=0.667739
+  - OT: mse=17.249969, mae=3.110832
+
+Running ETTh2 with context=672, prediction=192, stride=192
+[ETTh2] pred=192 windows=105 series=7 overall_mse=20.863951 overall_mae=2.830580
+  - HUFL: mse=54.523102, mae=5.370411
+  - HULL: mse=6.537240, mae=1.229932
+  - MUFL: mse=43.065575, mae=4.452784
+  - MULL: mse=8.436800, mae=2.199522
+  - LUFL: mse=10.748036, mae=2.117852
+  - LULL: mse=1.578529, mae=0.896075
+  - OT: mse=21.158388, mae=3.547485
+
+Running ETTh2 with context=672, prediction=336, stride=336
+[ETTh2] pred=336 windows=56 series=7 overall_mse=22.578976 overall_mae=2.930752
+  - HUFL: mse=60.010345, mae=5.572007
+  - HULL: mse=6.587144, mae=1.188615
+  - MUFL: mse=47.438129, mae=4.808653
+  - MULL: mse=7.324599, mae=2.019800
+  - LUFL: mse=10.451324, mae=2.147410
+  - LULL: mse=1.372272, mae=0.843076
+  - OT: mse=24.869015, mae=3.935699
+
+Running ETTh2 with context=672, prediction=720, stride=720
+[ETTh2] pred=720 windows=28 series=7 overall_mse=25.555912 overall_mae=3.369090
+  - HUFL: mse=61.219337, mae=6.018186
+  - HULL: mse=7.697794, mae=1.477349
+  - MUFL: mse=42.180920, mae=4.918747
+  - MULL: mse=15.873504, mae=2.920251
+  - LUFL: mse=15.072375, mae=2.534073
+  - LULL: mse=1.785118, mae=0.985853
+  - OT: mse=35.062336, mae=4.729174
+
+Running ETTm1 with context=672, prediction=96, stride=96
+[ETTm1] pred=96 windows=840 series=7 overall_mse=8.724439 overall_mae=1.224667
+  - HUFL: mse=29.603106, mae=2.994391
+  - HULL: mse=0.805185, mae=0.642629
+  - MUFL: mse=27.262745, mae=2.785424
+  - MULL: mse=0.581734, mae=0.525791
+  - LUFL: mse=0.266210, mae=0.340660
+  - LULL: mse=0.033975, mae=0.138013
+  - OT: mse=2.518108, mae=1.145762
+
+Running ETTm1 with context=672, prediction=192, stride=192
+[ETTm1] pred=192 windows=420 series=7 overall_mse=9.701334 overall_mae=1.382530
+  - HUFL: mse=31.905378, mae=3.291584
+  - HULL: mse=0.963376, mae=0.700490
+  - MUFL: mse=29.802563, mae=3.079921
+  - MULL: mse=0.691539, mae=0.565223
+  - LUFL: mse=0.423756, mae=0.416489
+  - LULL: mse=0.041837, mae=0.153912
+  - OT: mse=4.080883, mae=1.470089
+
+Running ETTm1 with context=672, prediction=336, stride=336
+[ETTm1] pred=336 windows=238 series=7 overall_mse=10.121474 overall_mae=1.433568
+  - HUFL: mse=32.227757, mae=3.237901
+  - HULL: mse=1.056749, mae=0.746060
+  - MUFL: mse=30.886177, mae=3.053682
+  - MULL: mse=0.699117, mae=0.583600
+  - LUFL: mse=0.529842, mae=0.468440
+  - LULL: mse=0.047763, mae=0.167101
+  - OT: mse=5.402909, mae=1.778196
+
+Running ETTm1 with context=672, prediction=720, stride=720
+[ETTm1] pred=720 windows=112 series=7 overall_mse=12.961329 overall_mae=1.676129
+  - HUFL: mse=41.446285, mae=3.845841
+  - HULL: mse=1.329717, mae=0.847190
+  - MUFL: mse=39.273376, mae=3.617221
+  - MULL: mse=0.955278, mae=0.702542
+  - LUFL: mse=0.736347, mae=0.571697
+  - LULL: mse=0.058411, mae=0.183165
+  - OT: mse=6.929879, mae=1.965249
+
+Running ETTm2 with context=672, prediction=96, stride=96
+[ETTm2] pred=96 windows=840 series=7 overall_mse=10.845045 overall_mae=1.784478
+  - HUFL: mse=28.299770, mae=3.401195
+  - HULL: mse=4.561331, mae=0.967233
+  - MUFL: mse=24.737953, mae=3.102949
+  - MULL: mse=4.165191, mae=1.375808
+  - LUFL: mse=2.796163, mae=0.995379
+  - LULL: mse=0.424498, mae=0.409790
+  - OT: mse=10.930409, mae=2.238991
+
+Running ETTm2 with context=672, prediction=192, stride=192
+[ETTm2] pred=192 windows=420 series=7 overall_mse=15.068531 overall_mae=2.133416
+  - HUFL: mse=38.683346, mae=3.926128
+  - HULL: mse=5.564794, mae=1.155224
+  - MUFL: mse=32.223450, mae=3.542200
+  - MULL: mse=5.750331, mae=1.633401
+  - LUFL: mse=4.847870, mae=1.238785
+  - LULL: mse=0.566133, mae=0.490646
+  - OT: mse=17.843788, mae=2.947529
+
+Running ETTm2 with context=672, prediction=336, stride=336
+[ETTm2] pred=336 windows=238 series=7 overall_mse=22.450632 overall_mae=2.694199
+  - HUFL: mse=64.071808, mae=5.364679
+  - HULL: mse=7.600082, mae=1.443476
+  - MUFL: mse=49.422226, mae=4.676421
+  - MULL: mse=8.851969, mae=2.081615
+  - LUFL: mse=5.786787, mae=1.368293
+  - LULL: mse=0.796589, mae=0.588106
+  - OT: mse=20.624954, mae=3.336802
+
+Running ETTm2 with context=672, prediction=720, stride=720
+[ETTm2] pred=720 windows=112 series=7 overall_mse=24.496712 overall_mae=2.962600
+  - HUFL: mse=73.195587, mae=5.882871
+  - HULL: mse=9.096974, mae=1.700852
+  - MUFL: mse=40.894161, mae=4.297235
+  - MULL: mse=10.925388, mae=2.410757
+  - LUFL: mse=7.667416, mae=1.602486
+  - LULL: mse=1.038529, mae=0.687462
+  - OT: mse=28.658947, mae=4.156542
+
+Summary (dataset, prediction_length, overall_mse, overall_mae)
+ETTh1,96,9.844768,1.442388
+ETTh1,192,9.958714,1.510409
+ETTh1,336,12.726084,1.685390
+ETTh1,720,10.544949,1.652062
+ETTh2,96,16.354364,2.410207
+ETTh2,192,20.863951,2.830580
+ETTh2,336,22.578976,2.930752
+ETTh2,720,25.555912,3.369090
+ETTm1,96,8.724439,1.224667
+ETTm1,192,9.701334,1.382530
+ETTm1,336,10.121474,1.433568
+ETTm1,720,12.961329,1.676129
+ETTm2,96,10.845045,1.784478
+ETTm2,192,15.068531,2.133416
+ETTm2,336,22.450632,2.694199
+ETTm2,720,24.496712,2.962600
+
+Averaged across prediction lengths (dataset, avg_mse, avg_mae)
+ETTh1,10.768629,1.572562
+ETTh2,21.338301,2.885157
+ETTm1,10.377144,1.429224
+ETTm2,18.215230,2.393673
