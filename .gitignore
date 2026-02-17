@@ -1,2 +1,4 @@
-.idea
-ttm_finetuned_models
+.idea/
+ttm_finetuned_models/
+
+logs/
