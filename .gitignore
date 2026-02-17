@@ -1,4 +1,5 @@
 .idea/
 ttm_finetuned_models/
 
-logs/
+TimeCMA/Embeddings/
+TimeCMA/Results/
