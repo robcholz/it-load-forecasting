@@ -1,6 +1,7 @@
 name: timesfm
 channels:
   - defaults
+  - conda-forge
 dependencies:
   - _libgcc_mutex=0.1=main
   - _openmp_mutex=5.1=1_gnu
@@ -146,3 +147,4 @@ dependencies:
       - typing-inspect==0.9.0
       - wadler-lindig==0.1.7
       - zipp==3.23.0
+prefix: /home/zsheng2/miniconda3/envs/timesfm
