@@ -1,0 +1,3 @@
+[submodule "TimeCMA"]
+	path = TimeCMA
+	url = https://github.com/ChenxiLiu-HNU/TimeCMA.git
