@@ -136,7 +136,7 @@ dependencies:
       - sympy==1.14.0
       - tensorstore==0.1.80
       - threadpoolctl==3.6.0
-      - timesfm==2.0.0
+      - -e ./timesfm[torch]
       - toolz==1.1.0
       - torch==2.10.0
       - tqdm==4.67.3

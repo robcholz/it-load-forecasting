@@ -127,7 +127,9 @@ def evaluate_dataset(
     prediction_length: int,
     batch_size: int,
     stride: int,
+    normalization_mode: str,
 ) -> EvalResult:
+    train_start, train_end = SPLIT_CONFIG[dataset_name]["train"]
     test_start, test_end = SPLIT_CONFIG[dataset_name]["test"]
 
     per_series_mse: Dict[str, float] = {}
@@ -137,7 +139,15 @@ def evaluate_dataset(
     total_windows = 0
 
     for col in target_columns:
-        series = series_map[col]
+        raw_series = series_map[col]
+        if normalization_mode == "train":
+            train_values = raw_series[train_start:train_end]
+            mean = float(np.mean(train_values))
+            std = float(np.std(train_values))
+            std = std if std > 1e-6 else 1.0
+            series = (raw_series - mean) / std
+        else:
+            series = raw_series
         contexts, targets = build_windows(
             series=series,
             start=test_start,
@@ -235,6 +245,16 @@ def main() -> None:
         default=True,
         help="Enable TimesFM input normalization inside ForecastConfig.",
     )
+    parser.add_argument(
+        "--normalization",
+        type=str,
+        default="train",
+        choices=["train", "none"],
+        help=(
+            "train: z-score each series using train split stats before evaluation "
+            "(matches other benchmark scripts); none: use raw values."
+        ),
+    )
     args = parser.parse_args()
 
     prediction_lengths = parse_int_list(args.prediction_lengths)
@@ -272,7 +292,7 @@ def main() -> None:
             print(
                 f"\nRunning {dataset_name} with context={args.context_length}, "
                 f"prediction={pred_len}, stride={stride}, "
-                f"normalize_inputs={args.normalize_inputs}"
+                f"normalize_inputs={args.normalize_inputs}, norm={args.normalization}"
             )
             result = evaluate_dataset(
                 model=model,
@@ -283,6 +303,7 @@ def main() -> None:
                 prediction_length=pred_len,
                 batch_size=args.batch_size,
                 stride=stride,
+                normalization_mode=args.normalization,
             )
             print_result(result)
             all_results.append(result)

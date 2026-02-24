@@ -203,7 +203,9 @@ def evaluate_dataset(
     batch_size: int,
     stride: int,
     num_samples: int,
+    normalization_mode: str,
 ) -> EvalResult:
+    train_start, train_end = SPLIT_CONFIG[dataset_name]["train"]
     test_start, test_end = SPLIT_CONFIG[dataset_name]["test"]
 
     per_series_mse: Dict[str, float] = {}
@@ -213,7 +215,15 @@ def evaluate_dataset(
     total_windows = 0
 
     for col in target_columns:
-        series = series_map[col]
+        raw_series = series_map[col]
+        if normalization_mode == "train":
+            train_values = raw_series[train_start:train_end]
+            mean = float(np.mean(train_values))
+            std = float(np.std(train_values))
+            std = std if std > 1e-6 else 1.0
+            series = (raw_series - mean) / std
+        else:
+            series = raw_series
         contexts, targets = build_windows(
             series=series,
             start=test_start,
@@ -355,6 +365,16 @@ def main() -> None:
         help="Number of sample paths for ChronosPipeline (ignored by Chronos2Pipeline).",
     )
     parser.add_argument(
+        "--normalization",
+        type=str,
+        default="train",
+        choices=["train", "none"],
+        help=(
+            "train: z-score each series using train split stats before evaluation "
+            "(matches other benchmark scripts); none: use raw values."
+        ),
+    )
+    parser.add_argument(
         "--device-map",
         type=str,
         default="auto",
@@ -397,7 +417,7 @@ def main() -> None:
             stride = args.stride if args.stride > 0 else pred_len
             print(
                 f"\nRunning {dataset_name} with context={args.context_length}, "
-                f"prediction={pred_len}, stride={stride}"
+                f"prediction={pred_len}, stride={stride}, norm={args.normalization}"
             )
             result = evaluate_dataset(
                 pipeline=pipeline,
@@ -409,6 +429,7 @@ def main() -> None:
                 batch_size=args.batch_size,
                 stride=stride,
                 num_samples=args.num_samples,
+                normalization_mode=args.normalization,
             )
             print_result(result)
             all_results.append(result)

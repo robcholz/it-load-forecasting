@@ -1,5 +1,7 @@
 .idea/
 ttm_finetuned_models/
 
-TimeCMA/Embeddings/
-TimeCMA/Results/
+TimeCMA/Embeddings/**
+TimeCMA/Results/**
+TimeCMA/datasets/**
+TimeCMA/logs_zeroshot/**

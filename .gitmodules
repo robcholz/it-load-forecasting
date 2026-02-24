@@ -1,3 +1,6 @@
 [submodule "TimeCMA"]
 	path = TimeCMA
 	url = https://github.com/ChenxiLiu-HNU/TimeCMA.git
+[submodule "timesfm"]
+	path = timesfm
+	url = https://github.com/google-research/timesfm.git
