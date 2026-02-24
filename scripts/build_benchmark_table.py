@@ -143,11 +143,13 @@ def build_tables_by_horizon(rows: List[Tuple[str, Dict[PairKey, PairMetric], Lis
         lines.append(f"## Horizon {horizon}")
         lines.append("| " + " | ".join(headers) + " |")
         lines.append("| " + " | ".join(["---"] * len(headers)) + " |")
+        best_notes: List[str] = []
 
         for dataset in DATASETS:
             row = [dataset]
             mse_vals: List[float] = []
             mae_vals: List[float] = []
+            entries: List[Tuple[str, float, float]] = []
             for _model, metrics, _contexts in rows:
                 metric = metrics.get((dataset, horizon))
                 if metric is None:
@@ -157,10 +159,17 @@ def build_tables_by_horizon(rows: List[Tuple[str, Dict[PairKey, PairMetric], Lis
                 row.extend([format_float(mse), format_float(mae)])
                 mse_vals.append(mse)
                 mae_vals.append(mae)
+                entries.append((_model, mse, mae))
 
             if mse_vals:
                 best_mse = min(mse_vals)
                 best_mae = min(mae_vals)
+                best_mse_models = [
+                    model_name for model_name, mse, _mae in entries if abs(mse - best_mse) < 1e-12
+                ]
+                best_mae_models = [
+                    model_name for model_name, _mse, mae in entries if abs(mae - best_mae) < 1e-12
+                ]
                 for i in range(len(model_labels)):
                     mse_col = 1 + i * 2
                     mae_col = mse_col + 1
@@ -168,7 +177,16 @@ def build_tables_by_horizon(rows: List[Tuple[str, Dict[PairKey, PairMetric], Lis
                         row[mse_col] = f"**{row[mse_col]}**"
                     if row[mae_col] != "-" and abs(float(row[mae_col]) - best_mae) < 1e-12:
                         row[mae_col] = f"**{row[mae_col]}**"
+                best_notes.append(
+                    f"- {dataset}: MSE -> {', '.join(best_mse_models)}; "
+                    f"MAE -> {', '.join(best_mae_models)}"
+                )
             lines.append("| " + " | ".join(row) + " |")
+
+        if best_notes:
+            lines.append("")
+            lines.append("Best by dataset:")
+            lines.extend(best_notes)
 
         sections.append("\n".join(lines))
 
