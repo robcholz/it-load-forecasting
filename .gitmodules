@@ -1,6 +1,8 @@
 [submodule "TimeCMA"]
 	path = TimeCMA
 	url = https://github.com/ChenxiLiu-HNU/TimeCMA.git
+	ignore = dirty
 [submodule "timesfm"]
 	path = timesfm
 	url = https://github.com/google-research/timesfm.git
+	ignore = dirty

@@ -5,3 +5,5 @@ TimeCMA/Embeddings/**
 TimeCMA/Results/**
 TimeCMA/datasets/**
 TimeCMA/logs_zeroshot/**
+
+logs/timecma.no_epoch.log
